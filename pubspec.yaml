@@ -37,6 +37,8 @@ dependencies:
   pull_to_refresh: ^2.0.0
   responsive_framework: ^0.1.5
   rxdart: ^0.27.3
+  equatable: ^2.0.3
+  dio: ^4.0.3
 
 dev_dependencies:
   flutter_test:
@@ -44,8 +46,9 @@ dev_dependencies:
 
   freezed: ^1.0.0
   flutter_lints: ^1.0.0
-  build_runner: ^2.1.5
-  flutter_launcher_icons: ^0.9.2
+  build_runner: ^2.1.5 #flutter pub run build_runner watch --delete-conflicting-outputs
+  flutter_launcher_icons: ^0.9.2 #flutter pub run flutter_launcher_icons:main
+  change_app_package_name: ^1.0.0 #flutter pub run change_app_package_name:main com.new.package.name
   injectable_generator: ^1.5.2
   json_serializable: ^6.0.1
 

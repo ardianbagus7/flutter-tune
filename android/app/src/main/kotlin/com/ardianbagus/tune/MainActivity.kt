@@ -1,4 +1,4 @@
-package com.example.tune
+package com.ardianbagus.tune
 
 import io.flutter.embedding.android.FlutterActivity
 

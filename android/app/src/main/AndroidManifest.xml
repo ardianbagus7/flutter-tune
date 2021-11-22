@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tune">
+    package="com.ardianbagus.tune">
    <application
         android:label="tune"
         android:icon="@mipmap/ic_launcher">
