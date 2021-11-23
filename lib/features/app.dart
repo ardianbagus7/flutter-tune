@@ -4,8 +4,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:tune/core/routes/routes.dart';
-import 'package:tune/core/styles/style.dart';
-import 'package:tune/core/styles/theme_service.dart';
+import 'package:tune/core/theme/themes.dart';
+import 'package:tune/core/theme/theme_service.dart';
+import 'package:tune/core/util/global_function.dart';
 
 import 'auth/presentation/pages/splash_screen.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
 
       //* Core
       debugShowCheckedModeBanner: false,
-      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
+      onGenerateTitle: (context) => tr(context)!.appTitle,
 
       //* Routes
       getPages: Routes().getPages(),
