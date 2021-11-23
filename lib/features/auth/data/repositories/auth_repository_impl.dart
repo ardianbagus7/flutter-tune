@@ -8,7 +8,6 @@ import 'package:tune/features/auth/domain/entities/user.dart';
 import 'package:tune/features/auth/domain/repositories/auth_repository.dart';
 
 @LazySingleton(as: AuthRepository)
-@injectable
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource authRemoteDataSource;
 

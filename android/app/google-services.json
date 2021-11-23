@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "51891993815",
+    "firebase_url": "https://tune-9a5ba.firebaseio.com",
+    "project_id": "tune-9a5ba",
+    "storage_bucket": "tune-9a5ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51891993815:android:65eed559e6d65296f24492",
+        "android_client_info": {
+          "package_name": "com.ardianbagus.tune"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51891993815-6j7i3ftre95b6mje5rl776v820m1dsb6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ardianbagus.tune",
+            "certificate_hash": "687d8c404a439b2cbd97d108f9b0da51b52ab0c6"
+          }
+        },
+        {
+          "client_id": "51891993815-shtkdva59e23b06nslfultvfk5vhd5av.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ardianbagus.tune",
+            "certificate_hash": "9c4c0b6e9b42305b1677d31dfc863fafd670c1dd"
+          }
+        },
+        {
+          "client_id": "51891993815-9a4reqvt0cq2i47nrulta9lu29vlk2fh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMCZ72hsRv8z98nfrL2FfKlsBAJP0dV7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51891993815-9a4reqvt0cq2i47nrulta9lu29vlk2fh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
