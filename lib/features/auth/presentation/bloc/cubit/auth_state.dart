@@ -1,7 +1,7 @@
-part of 'auth_bloc.dart';
+part of 'auth_cubit.dart';
 
 @freezed
-class AuthState extends StateBloc with _$AuthState {
+class AuthState with _$AuthState {
   const factory AuthState.initial() = _Initial;
 
   const factory AuthState.isLoading() = _IsLoading;

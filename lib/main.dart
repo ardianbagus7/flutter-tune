@@ -10,5 +10,6 @@ void main() async {
   await GetStorage.init();
   await Firebase.initializeApp();
   configureDependencies();
+  
   runApp(const MyApp());
 }

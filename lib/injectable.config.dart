@@ -19,7 +19,7 @@ import 'features/auth/domain/repositories/auth_repository.dart' as _i9;
 import 'features/auth/domain/usecases/check_signin.dart' as _i11;
 import 'features/auth/domain/usecases/logout_user.dart' as _i12;
 import 'features/auth/domain/usecases/signin_with_gogle.dart' as _i13;
-import 'features/auth/presentation/bloc/auth_cubit.dart'
+import 'features/auth/presentation/bloc/auth_bloc.dart'
     as _i14; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
@@ -46,7 +46,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i12.LogoutUser>(() => _i12.LogoutUser(get<_i9.AuthRepository>()));
   gh.factory<_i13.SigninWithGoogle>(
       () => _i13.SigninWithGoogle(get<_i9.AuthRepository>()));
-  gh.factory<_i14.AuthCubit>(() => _i14.AuthCubit(get<_i9.AuthRepository>()));
+  gh.factory<_i14.AuthBloc>(() => _i14.AuthBloc(get<_i9.AuthRepository>()));
   return get;
 }
 
