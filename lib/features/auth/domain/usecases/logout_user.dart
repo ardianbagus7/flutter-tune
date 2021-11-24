@@ -5,13 +5,13 @@ import 'package:tune/core/usecases/usecase.dart';
 import 'package:tune/features/auth/domain/repositories/auth_repository.dart';
 
 @injectable
-class LogoutUser implements UseCase<Unit, NoParams> {
+class LogoutUser implements UseCase<bool, NoParams> {
   final AuthRepository authRepository;
 
   LogoutUser(this.authRepository);
 
   @override
-  Future<Either<Failure, Unit>> call(NoParams params) async {
+  Future<Either<Failure, bool>> call(NoParams params) async {
     return await authRepository.logoutUser();
   }
 }

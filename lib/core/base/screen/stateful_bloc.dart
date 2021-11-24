@@ -6,6 +6,8 @@ import 'package:tune/core/base/bloc/event_bloc.dart';
 import 'package:tune/core/base/bloc/state_bloc.dart';
 import 'package:tune/core/util/log.dart';
 
+import '../../../injectable.dart';
+
 abstract class StatefulBloc<S extends StatefulWidget, B extends BaseBloc<E, ST>,
     ST extends StateBloc, E extends EventBloc> extends State<S> {
   // NavigationService nav = NavigationService.instance;
@@ -49,7 +51,10 @@ abstract class StatefulBloc<S extends StatefulWidget, B extends BaseBloc<E, ST>,
   }
 
   Widget createBloc({required Widget child}) {
-    return child;
+    return BlocProvider<B>(
+      create: (context) => getIt<B>(),
+      child: child,
+    );
   }
 
   void loading() {
@@ -71,6 +76,10 @@ abstract class StatefulBloc<S extends StatefulWidget, B extends BaseBloc<E, ST>,
     );
   }
 
+  void closeLoading() {
+    Navigator.of(context, rootNavigator: true).pop();
+  }
+
   Widget blocSelector<V>({
     required BlocWidgetBuilder<V> builder,
     required BlocWidgetSelector<ST, V> d,
@@ -84,7 +93,7 @@ abstract class StatefulBloc<S extends StatefulWidget, B extends BaseBloc<E, ST>,
     E event,
   ) {
     setLog(event.runtimeType);
-    BlocProvider.of<B>(context).add(event);
+    context.read<B>().add(event);
   }
 
   void initEvent(
@@ -96,6 +105,12 @@ abstract class StatefulBloc<S extends StatefulWidget, B extends BaseBloc<E, ST>,
 
   void initVoid(void function) {
     Future.delayed(const Duration(milliseconds: 300), () => function);
+  }
+
+  Widget blocConsumer(
+      {required BlocWidgetBuilder<ST> builder,
+      required void Function(BuildContext, ST) listener}) {
+    return BlocConsumer<B, ST>(builder: builder, listener: listener);
   }
 
   Widget blocBuilder({required BlocWidgetBuilder<ST> builder}) {
@@ -117,7 +132,7 @@ abstract class StatefulBloc<S extends StatefulWidget, B extends BaseBloc<E, ST>,
   @override
   void initState() {
     super.initState();
-    bloc = context.read<B>();
+    // bloc = context.read<B>();
   }
 
   void pushState(FrameCallback st) {

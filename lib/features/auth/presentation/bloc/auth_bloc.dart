@@ -23,6 +23,7 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
   }
 
   void _signInWithGoogle(Emitter<AuthState> emit) async {
+    emit(const AuthState.isLoading());
     final _data = await authRepository.signinWithGoogle();
 
     _data.fold(
@@ -32,6 +33,7 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
   }
 
   void _checkSignIn(Emitter<AuthState> emit) async {
+    emit(const AuthState.isLoading());
     final _data = await authRepository.checkSignIn();
 
     _data.fold(
@@ -41,6 +43,7 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
   }
 
   void _signOutAccount(Emitter<AuthState> emit) async {
+    emit(const AuthState.isLoading());
     final _data = await authRepository.logoutUser();
     _data.fold(
       (l) => emit(AuthState.onError(l.toString())),

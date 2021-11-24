@@ -7,10 +7,10 @@ import 'package:tune/core/error/exceptions.dart';
 abstract class AuthRemoteDataSource {
   Future<UserCredential> signinWithGoogle();
   Future<bool> checkSignin();
-  Future logoutUser();
+  Future<bool> logoutUser();
 }
 
-@LazySingleton(as:AuthRemoteDataSource)
+@LazySingleton(as: AuthRemoteDataSource)
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
@@ -53,10 +53,10 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   }
 
   @override
-  Future logoutUser() async {
+  Future<bool> logoutUser() async {
     try {
       await _googleSignIn.signOut();
-      return;
+      return true;
     } on FirebaseAuthException catch (e) {
       debugPrint("checkSignin ${e.toString()}");
       throw ServerException();

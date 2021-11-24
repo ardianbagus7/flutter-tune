@@ -7,5 +7,5 @@ abstract class AuthRepository {
   Future<Option<User>> getSignedInUser();
   Future<Either<Failure, fs.UserCredential>> signinWithGoogle();
   Future<Either<Failure, bool>> checkSignIn();
-  Future<Either<Failure, Unit>> logoutUser();
+  Future<Either<Failure, bool>> logoutUser();
 }
